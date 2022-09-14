@@ -1,0 +1,31 @@
+version: "1.0"
+services:
+  mysqldb:
+    build:
+      context: ./Docker/db
+      dockerfile: Dockerfile
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=19021983z
+    ports:
+      - 3307:3306
+    networks:
+      - DockerPracticeNetwork
+
+  app:
+    build:
+      context: ./
+      dockerfile: Docker/app/Dockerfile
+    depends_on:
+      - mysqldb
+    restart: on-failure
+    ports:
+        - 8080:8080
+    networks:
+      - DockerPracticeNetwork
+    stdin_open: true
+    tty: true
+
+networks:
+  DockerPracticeNetwork:
+

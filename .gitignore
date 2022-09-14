@@ -1,4 +1,3 @@
 .idea/**
 target/**
-Docker/
-docker-compose.yaml
+.DS_Store

@@ -9,8 +9,6 @@ services:
       - MYSQL_ROOT_PASSWORD=19021983z
     ports:
       - 3307:3306
-    networks:
-      - DockerPracticeNetwork
 
   app:
     build:
@@ -21,11 +19,6 @@ services:
     restart: on-failure
     ports:
         - 8080:8080
-    networks:
-      - DockerPracticeNetwork
     stdin_open: true
     tty: true
-
-networks:
-  DockerPracticeNetwork:
 

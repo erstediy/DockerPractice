@@ -31,6 +31,7 @@ public class AnimalService {
     @Transactional
     public Animal getAnimalById(Long id){
         Session session = sessionFactory.getCurrentSession();
-        return (Animal) session.createNativeQuery("select * from animal where id =" + id).getSingleResult();
+        //return (Animal) session.createNativeQuery("select * from Animal where id =" + id).getSingleResult();
+        return session.get(Animal.class,id);
     }
 }

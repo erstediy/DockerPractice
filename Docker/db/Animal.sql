@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS DockerPractice;
+DROP DATABASE IF EXISTS docker;
 
-CREATE DATABASE DockerPractice;
+CREATE DATABASE docker;
 
-USE DockerPractice;
+USE docker;
 
-DROP TABLE IF EXISTS `animal`;
-CREATE TABLE `animal` (
+DROP TABLE IF EXISTS `Animal`;
+CREATE TABLE `Animal` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `age` int NOT NULL,
   `type` varchar(30) NOT NULL,
@@ -14,5 +14,5 @@ CREATE TABLE `animal` (
   UNIQUE KEY `id` (`id`)
 );
 
-INSERT INTO animal VALUES(1, 13, 'cat', 'w');
-INSERT INTO animal VALUES(2,11,'dog','m');
+INSERT INTO Animal VALUES(1, 13, 'cat', 'w');
+INSERT INTO Animal VALUES(2,11,'dog','m');
